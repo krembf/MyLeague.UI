@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2>Upcoming Schedule</h2>
+        <ion-card>
+          <ion-card-header>
+            {{incomingGames[0].round}}
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{incomingGames[0].home}}</p>
+            <p>vs</p>
+            <p>{{incomingGames[0].away}}</p>
+            <p>{{incomingGames[0].date}}</p>
+            <p>{{incomingGames[0].location}}</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngFor="let ig of incomingGames.slice(1)">
+          <ion-card-header>
+            {{ig.round}} | {{ig.home}} vs {{ig.away}} | {{ig.date}}
+          </ion-card-header>
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col width-50 offset-25>
+        <h2>Standings</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <h3>Team</h3>
+            </ion-col>
+            <ion-col col-2>
+              <h3>W</h3>
+            </ion-col>
+            <ion-col col-2>
+              <h3>L</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let t of teams">
+            <ion-col col-4>{{t.name}}</ion-col>
+            <ion-col col-2>{{t.w}}</ion-col>
+            <ion-col col-2>{{t.l}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2>Past Games</h2>
+        <ion-grid>
+          <ion-row *ngFor="let g of pastGames">
+            <ion-col col-2>{{g.round}}</ion-col>
+            <ion-col col-2>{{g.home}}</ion-col>
+            <ion-col col-1>{{g.score}}</ion-col>
+            <ion-col col-2>{{g.away}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col width-50 offset-25>
+          <h2>Team Scorers</h2>
+          <ion-grid>
+            <ion-row *ngFor="let s of scorers">
+              <ion-col col-4>{{s.name}}</ion-col>
+              <ion-col col-2>{{s.goals}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>      
+    </ion-row>
+  </ion-grid>
+</ion-content>
