@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Profile</ion-title>
+    <ion-title> User Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,12 +20,12 @@
         <ion-list>
           <form (ngSubmit)="saveForm()">
             <ion-item>
-              <ion-label fixed>City</ion-label>
-              <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+              <ion-label fixed>First Name</ion-label>
+              <ion-input [(ngModel)]="first_name" name="first_name" type="text"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label fixed>State</ion-label>
-                <ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
+                <ion-label fixed>Last Name</ion-label>
+                <ion-input [(ngModel)]="last_name" name="last_name" type="text"></ion-input>
             </ion-item>            
             <button ion-button type="submit" block>Save Changes</button>
           </form>

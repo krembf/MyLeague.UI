@@ -15,8 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  city: string;
-  state: string;
+  first_name: string;
+  last_name: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,12 +26,12 @@ export class ProfilePage {
   }
 
   saveForm() {
-    let location = 
+    let name = 
     { 
-      city: this.city, 
-      state: this.state
+      firstName: this.first_name, 
+      lastName: this.last_name,
     }
-    console.log('saving location');
+    console.log('saving name');
     // this.storage.set('location', JSON.stringify(location)).then(() => {
     //   this.navCtrl.push(HomePage);
     // });

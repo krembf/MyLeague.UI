@@ -14,8 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LeagueProvider } from '../providers/league/league';
 import { ScorersProvider } from '../providers/scorers/scorers';
-//import { PastGamesProvider } from '../providers/past-games/past-games';
-//import { IncomingGamesProvider } from '../providers/incoming-games/incoming-games';
+import { GamesProvider } from '../providers/games/games';
 
 @NgModule({
   declarations: [
@@ -44,8 +43,7 @@ import { ScorersProvider } from '../providers/scorers/scorers';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LeagueProvider,
     ScorersProvider,
-//    PastGamesProvider,
-//    IncomingGamesProvider
+    GamesProvider
   ]
 })
 export class AppModule {}
