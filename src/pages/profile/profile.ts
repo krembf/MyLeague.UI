@@ -1,5 +1,7 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserInfoProvider } from '../../providers/user-info/user-info';
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,10 +17,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private userInfoProvider: UserInfoProvider ) {
+
   }
 
   ionViewDidLoad() {
@@ -26,14 +29,16 @@ export class ProfilePage {
   }
 
   saveForm() {
-    let name = 
+    let userDetails = 
     { 
-      firstName: this.first_name, 
-      lastName: this.last_name,
+      firstName: this.firstName, 
+      lastName: this.lastName
     }
-    console.log('saving name');
+    console.log('saving User Details');
     // this.storage.set('location', JSON.stringify(location)).then(() => {
     //   this.navCtrl.push(HomePage);
     // });
+
+    this.userInfoProvider.UpdateUserInfo(userDetails);
   }  
 }

@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LeagueProvider } from '../providers/league/league';
 import { ScorersProvider } from '../providers/scorers/scorers';
 import { GamesProvider } from '../providers/games/games';
+import { UserInfoProvider }  from '../providers/user-info/user-info';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { GamesProvider } from '../providers/games/games';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LeagueProvider,
     ScorersProvider,
-    GamesProvider
+    GamesProvider,
+    UserInfoProvider
   ]
 })
 export class AppModule {}
